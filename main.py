@@ -12,15 +12,13 @@ rows = columns = 10
 
 cell_size = (width/columns, height/rows)
 
-for row in range(rows):
-    start_pos = (0, row * cell_size[1])
-    end_pos = (width, row * cell_size[1])
-    pygame.draw.line(screen, (255, 255, 255), start_pos, end_pos)
+# pygame.draw.rect(screen,(255, 255, 255), pygame.Rect(128,0,128,128), 1)
 
 for col in range(columns):
     start_pos = (col * cell_size[0], 0)
-    end_pos = (col * cell_size[0], height)
-    pygame.draw.line(screen, (255, 255, 255), start_pos, end_pos)
+    end_pos = (width/columns * col, 72)
+    rect = pygame.Rect(start_pos,end_pos)
+    pygame.draw.rect(screen, (255, 255, 255), rect, 1)
 
 running = True
 while running:
